@@ -1,0 +1,38 @@
+{
+    "name": "winavin/livewire-resource",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/winavin/livewire-resource",
+    "keywords": ["Laravel", "LivewireResource"],
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Winavin\\LivewireResource\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Winavin\\LivewireResource\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Winavin\\LivewireResource\\LivewireResourceServiceProvider"
+            ],
+            "aliases": {
+                "LivewireResource": "Winavin\\LivewireResource\\Facades\\LivewireResource"
+            }
+        }
+    }
+}
