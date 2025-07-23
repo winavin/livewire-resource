@@ -1,38 +1,29 @@
 {
     "name": "winavin/livewire-resource",
-    "description": ":package_description",
+    "description": "Laravel Livewire helper package for using Route::resource like structure for full page livewire components.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@email.com",
-            "homepage": "http://author.com"
+            "name": "WINavin Patil",
+            "email": "winavin@gmail.com",
+            "homepage": "https://github.com/winavin"
         }
     ],
     "homepage": "https://github.com/winavin/livewire-resource",
-    "keywords": ["Laravel", "LivewireResource"],
+    "keywords": ["Laravel", "Livewire Resource"],
     "require": {
-    },
-    "require-dev": {
+        "livewire/livewire": "^3.0"
     },
     "autoload": {
         "psr-4": {
             "Winavin\\LivewireResource\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Winavin\\LivewireResource\\Tests\\": "tests"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
                 "Winavin\\LivewireResource\\LivewireResourceServiceProvider"
-            ],
-            "aliases": {
-                "LivewireResource": "Winavin\\LivewireResource\\Facades\\LivewireResource"
-            }
+            ]
         }
     }
 }
