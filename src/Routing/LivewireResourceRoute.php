@@ -42,7 +42,7 @@ class LivewireResourceRoute
 
         $this->options['folder'] = $this->options['folder'] ?? config('livewire-resource.folder');
 
-        $folder = $this->options['folder'] == "" ? "" : Str::studly( $this->options['folder']) . "\\";
+        $folder = $this->options['folder'] == "" ? "" : Str::studly( $this->options['folder']);
 
         $namespace = $this->options['namespace'] ?? "App\\Livewire\\$folder\\$title\\";
         $component = $this->componentBase ?? $singularTitle;
