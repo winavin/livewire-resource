@@ -14,7 +14,7 @@ class DeleteLivewireResource extends Command implements PromptsForMissingInput
      * @var string
      */
     protected $signature = 'livewire:delete-resource {name : The resource name (plural)}
-                {--folder=pages : Only generate specific actions (comma-separated)}
+                {--folder=: Only generate specific actions (comma-separated)}
                 {--only= : Only generate specific actions (comma-separated)}
                 {--except= : Exclude specific actions (comma-separated)}';
 
@@ -33,14 +33,14 @@ class DeleteLivewireResource extends Command implements PromptsForMissingInput
     public function handle() : void
     {
         $dotName = trim($this->argument('name'));
-        $folder = $this->option('folder');
+        $folder = $this->option('folder') ?? config('livewire-resource.folder');
         $segments = explode('.', $dotName);
 
         $slug = array_pop($segments);
         $folders = $segments;
         $singular = Str::singular($slug);
 
-        $namespacePrefix = implode('.', [...$folders, $slug]); // pages.organizations
+        $namespacePrefix = implode('.', [...$folders, $slug]);
 
         $only = $this->option('only') ? explode(',', $this->option('only')) : null;
         $except = $this->option('except') ? explode(',', $this->option('except')) : [];
