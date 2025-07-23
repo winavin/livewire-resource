@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Winavin\LivewireResource\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;

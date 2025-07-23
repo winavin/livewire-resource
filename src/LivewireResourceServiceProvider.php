@@ -2,10 +2,10 @@
 
 namespace Winavin\LivewireResource;
 
-use App\Console\Commands\MakeLivewireResource;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Winavin\LivewireResource\Console\Commands\DeleteLivewireResource;
+use Winavin\LivewireResource\Console\Commands\MakeLivewireResource;
 use Winavin\LivewireResource\Routing\LivewireResourceRoute;
 
 class LivewireResourceServiceProvider extends ServiceProvider
