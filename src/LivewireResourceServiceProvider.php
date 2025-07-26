@@ -24,11 +24,6 @@ class LivewireResourceServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
-
-        Route::macro('livewireResource', function ( string $name, ?string $componentBase = null, array $options = [] )
-        {
-            return new LivewireResourceRoute($name, $componentBase, $options);
-        });
     }
 
     /**
@@ -39,6 +34,11 @@ class LivewireResourceServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/livewire-resource.php', 'livewire-resource');
+
+        Route::macro('livewireResource', function ( string $name, ?string $componentBase = null, array $options = [] )
+        {
+            return new LivewireResourceRoute($name, $componentBase, $options);
+        });
     }
 
     /**
