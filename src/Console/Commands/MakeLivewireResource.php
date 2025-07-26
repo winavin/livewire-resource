@@ -14,7 +14,7 @@ class MakeLivewireResource extends Command implements PromptsForMissingInput
      * @var string
      */
     protected $signature = 'livewire:make-resource {name : The resource name (plural)}
-                {--folder=pages : Only generate specific actions (comma-separated)}
+                {--folder= : folder path to generate components in (default: livewire-resource.folder config value)}
                 {--only= : Only generate specific actions (comma-separated)}
                 {--except= : Exclude specific actions (comma-separated)}
                 {--inline : Generate inline components}
@@ -35,7 +35,9 @@ class MakeLivewireResource extends Command implements PromptsForMissingInput
     public function handle() : void
     {
         $dotName = trim($this->argument('name'));
-        $folder = $this->option('folder');
+
+        $folder = $this->option('folder') ?? config('livewire-resource.folder');
+
         $segments = explode('.', $dotName);
 
         $slug = array_pop($segments);
